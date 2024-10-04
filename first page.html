@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management System</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        input[type="file"], input[type="submit"], input[type="search"] {
+            padding: 12px;
+            margin: 10px 0;
+            width: 70%;
+            max-width: 400px;
+            border-radius: 5px;
+            border: 2px solid #ffcc00;
+            background: #333;
+            color: #fff;
+            outline: none;
+            transition: background 0.3s, border 0.3s;
+        }
+
+        input[type="file"]:hover, input[type="submit"]:hover, input[type="search"]:hover {
+            background: #ffcc00;
+            color: #333;
+            border: 2px solid #fff;
+        }
+
+        .file-list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .file-list li {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .file-list li a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        .file-list li:hover {
+            background: #ffcc00;
+        }
+
+        .file-list li:hover a {
+            color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            color: #aaa;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload and Search Files</h2>
+
+        <!-- File Upload Form -->
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <input type="submit" value="Upload File">
+        </form>
+
+        <!-- Search Form -->
+        <form action="search.php" method="get">
+            <input type="search" name="query" placeholder="Search for files..." required>
+            <input type="submit" value="Search">
+        </form>
+
+        <!-- File List (If any files are present, they can be listed here) -->
+        <ul class="file-list">
+            <!-- Example of file items; replace with dynamic content -->
+            <li><a href="path_to_file.pdf">Sample File 1.pdf</a></li>
+            <li><a href="path_to_file.docx">Sample File 2.docx</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 File Management System. All rights reserved.</p>
+    </div>
+</body>
+</html>
